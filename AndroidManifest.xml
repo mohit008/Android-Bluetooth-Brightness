@@ -18,6 +18,7 @@
         <activity
             android:name=".communication.MainActivity"
             android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,37 +29,45 @@
         <activity
             android:name=".communication.Device_Config"
             android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".communication.PairedListActivity"
             android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
             android:label="@string/select_device" >
         </activity>
         <activity
             android:name=".communication.UnPairedListActivity"
             android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
             android:label="@string/select_device" >
         </activity>
         <activity
             android:name=".communication.BluetoothService"
-            android:configChanges="orientation|keyboardHidden" >
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".communication.Setting"
-            android:configChanges="orientation|keyboardHidden" >
+            android:configChanges="orientation|keyboardHidden" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".schedule.Schedule_Screen"
-            android:configChanges="orientation|keyboardHidden" >
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".schedule.Schedule_Detail_Screen"
-            android:configChanges="orientation|keyboardHidden" >
+            android:configChanges="orientation|keyboardHidden" 
+            android:screenOrientation="portrait">
         </activity>
          <activity
             android:name=".schedule.Schedule_Detail_Edit"
-            android:configChanges="orientation|keyboardHidden" >
+            android:configChanges="orientation|keyboardHidden" 
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
