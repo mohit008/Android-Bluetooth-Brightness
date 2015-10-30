@@ -19,22 +19,14 @@
 
         <Button
             android:id="@+id/btn_pair"
-            android:layout_width="125dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#0C76A3"
-            android:text="Up"
+            android:text="Unpair"
             android:textColor="#ffffff"
              />
 
-        <Button
-            android:id="@+id/btn_schedule"
-            android:layout_width="125dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#0C76A3"
-            android:text="Schedule"
-            android:textColor="#ffffff" />
     </LinearLayout>
 
     <ImageButton
