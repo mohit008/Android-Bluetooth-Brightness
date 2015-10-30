@@ -21,8 +21,7 @@ import bluetooth.brightness.R;
 public class Setting extends Activity {
 
 	private ListView list;
-	private EditText edit;
-	private Button add;
+
 	
 	
 	@Override
@@ -34,10 +33,6 @@ public class Setting extends Activity {
 		bar.setTitle("Settings");
 		bar.setIcon(getResources().getDrawable(R.drawable.setting));
 		
-		edit = (EditText) findViewById(R.id.list_edit);
-		edit.setVisibility(View.GONE);
-		add = (Button) findViewById(R.id.list_add);
-		add.setVisibility(View.GONE);
 		//list view
 	    list=(ListView)findViewById(R.id.list);
 	    list.setAdapter(new Setting_Adapter(this));

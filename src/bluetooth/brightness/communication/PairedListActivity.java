@@ -29,11 +29,10 @@ public class PairedListActivity extends Activity {
 	private ListView mListView;
 	private DeviceAdapter mAdapter;
 	private ArrayList<BluetoothDevice> mDeviceList;
-	private EditText edit;
+
 	
 	private String mac ="",activity_name= "";
 	
-	private Button add;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -43,13 +42,8 @@ public class PairedListActivity extends Activity {
 		
 		mDeviceList		= getIntent().getExtras().getParcelableArrayList("device.list");
 		mListView		= (ListView) findViewById(R.id.list);
-		edit     		= (EditText) findViewById(R.id.list_edit);
 		mAdapter		= new DeviceAdapter(this);
-		
-		add = (Button) findViewById(R.id.list_add);
-		
-		edit.setVisibility(View.GONE);
-		add.setVisibility(View.GONE);
+	
 		Intent intent = getIntent();
 		activity_name = intent.getExtras().getString("ativity_name");
 		mAdapter.setData(mDeviceList);

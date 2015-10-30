@@ -27,11 +27,10 @@ public class UnPairedListActivity extends Activity {
 	private ListView mListView;
 	private UnpairDeviceAdapter mAdapter;
 	private ArrayList<BluetoothDevice> mDeviceList;
-	private EditText edit;
+	
 
 	private String mac ="";
 
-	private Button add;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -41,8 +40,7 @@ public class UnPairedListActivity extends Activity {
 
 		mDeviceList		= getIntent().getExtras().getParcelableArrayList("device.list");
 		mListView		= (ListView) findViewById(R.id.list);
-		edit    		= (EditText) findViewById(R.id.list_edit);
-		add				= (Button) findViewById(R.id.list_add);
+
 		mAdapter		= new UnpairDeviceAdapter(this);
 
 		mAdapter.setData(mDeviceList);
@@ -50,8 +48,7 @@ public class UnPairedListActivity extends Activity {
 
 		ActionBar bar = getActionBar();
 		bar.setTitle("UnPaired Device");
-		edit.setVisibility(View.GONE);
-		add.setVisibility(View.GONE);
+
 
 		mListView.setAdapter(mAdapter);
 
