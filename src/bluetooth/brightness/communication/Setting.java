@@ -123,12 +123,10 @@ public class Setting extends Activity {
     	
     	private int[] images = {
     			R.drawable.config,
-    			R.drawable.schedule
     	};
     	
     	private String[] caption = {
     		"Device Configuration",
-    		"Schedule"
     	};
     	
 

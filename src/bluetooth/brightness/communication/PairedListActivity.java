@@ -164,7 +164,6 @@ public class PairedListActivity extends Activity {
 				holder.nameTv		= (TextView) convertView.findViewById(R.id.device_name);
 				holder.addressTv 	= (TextView) convertView.findViewById(R.id.device_address);
 				holder.pairBtn		= (Button) convertView.findViewById(R.id.btn_pair);
-				holder.pairSch		= (Button) convertView.findViewById(R.id.btn_schedule);
 				holder.go		    = (ImageButton) convertView.findViewById(R.id.go);
 				holder.layout		= (LinearLayout) convertView.findViewById(R.id.paired_button);
 				
@@ -219,7 +218,6 @@ public class PairedListActivity extends Activity {
 			TextView nameTv;
 			TextView addressTv;
 			Button pairBtn;
-			Button pairSch;
 			ImageButton go;
 			LinearLayout layout;
 		}

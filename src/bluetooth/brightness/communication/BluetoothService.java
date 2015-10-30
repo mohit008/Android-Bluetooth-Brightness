@@ -79,7 +79,6 @@ public class BluetoothService extends Activity {
 		setupChat();
 		connectDevice();
 		
-		showStartUpDialog();
 		
 	
 	}
@@ -123,14 +122,8 @@ public class BluetoothService extends Activity {
 	private void recieveMessage(String readMessage) {
 
 		String reciveMessage = readMessage;
-		String device = readMessage.substring(1,2);
-		String status = readMessage.substring(2,3);
 
-		brightness_status.setText(mConnectedDeviceName + ":  "
-				+ readMessage);
-
-	//	UpdateStatus(status,device);
-
+		brightness_status.setText(mConnectedDeviceName + ": "+ readMessage);
 
 		receiveMessage = "";
 	}
@@ -167,10 +160,11 @@ public class BluetoothService extends Activity {
 
 				readMessage = new String(readBuf, 0, msg.arg1);
 				String what = msg.what+"";
-				if(readMessage.length()>1){
-					receiveMessage = what+readMessage;
-					recieveMessage(receiveMessage);
-				}
+//				if(readMessage.length()>1){
+//					receiveMessage = what+readMessage;
+//					recieveMessage(receiveMessage);
+//				}
+				recieveMessage(readMessage);
 
 
 				break;
@@ -180,7 +174,7 @@ public class BluetoothService extends Activity {
 				Toast.makeText(getApplicationContext(),
 						"Connected to " + mConnectedDeviceName,
 						Toast.LENGTH_SHORT).show();
-				sendSi();
+				
 				break;
 			case MESSAGE_TOAST:
 				Toast.makeText(getApplicationContext(),
@@ -192,11 +186,7 @@ public class BluetoothService extends Activity {
 	};
 
 	
-	  private void sendSi() {
-
-		  sendMessage("21113DA");
-		  
-		}
+	
 
 	private void connectDevice() {
 
@@ -214,10 +204,7 @@ public class BluetoothService extends Activity {
 
 		brightness.setMax(5);
 
-		brightness.setProgress(1);
-
-
-
+		brightness.setProgress(0);
 
 		brightness.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 
@@ -234,9 +221,7 @@ public class BluetoothService extends Activity {
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progress,
 					boolean fromUser) {
-				if(progress == 0){
-					brightness.setProgress(1);
-				}
+				
 				intensity = progress;
 				sendMessage(intensity+"");
 			}
@@ -250,26 +235,9 @@ public class BluetoothService extends Activity {
 	}
 	
 	
-	public void showStartUpDialog(){
+	public void setBrightness(){
 
-/*
-		final Dialog dialog = new Dialog(BluetoothService.this);
-		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		dialog.setContentView(R.layout.dialog_to_update_status);
-        
-        final ProgressBar bar = (ProgressBar) dialog.findViewById(R.id.progress_update);
-        
-       
-       
-        dialog.setOnDismissListener(new OnDismissListener() {
-			
-			@Override
-			public void onDismiss(DialogInterface dialog) {
-				finish();
-				
-			}
-		});
-        dialog.show();*/
+
       
 	
 	
