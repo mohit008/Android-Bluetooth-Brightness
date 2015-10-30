@@ -52,8 +52,6 @@ public class UnPairedListActivity extends Activity {
 
 		mListView.setAdapter(mAdapter);
 
-
-
 		registerReceiver(mPairReceiver, new IntentFilter(BluetoothDevice.ACTION_BOND_STATE_CHANGED)); 
 	}
 

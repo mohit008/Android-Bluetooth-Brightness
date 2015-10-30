@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
@@ -134,12 +135,6 @@ public class BluetoothService extends Activity {
 		super.onBackPressed();
 	}
 
-	public void UpdateStatus(String status,String device){
-
-
-	
-
-	}
 
 
 	private final Handler mHandler = new Handler() {
@@ -160,10 +155,7 @@ public class BluetoothService extends Activity {
 
 				readMessage = new String(readBuf, 0, msg.arg1);
 				String what = msg.what+"";
-//				if(readMessage.length()>1){
-//					receiveMessage = what+readMessage;
-//					recieveMessage(receiveMessage);
-//				}
+
 				recieveMessage(readMessage);
 
 
@@ -235,10 +227,14 @@ public class BluetoothService extends Activity {
 	}
 	
 	
-	public void setBrightness(){
+	public void setBrightness(float progress){
 
 
-      
+		float backLight = (float) progress/100;
+
+		WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
+		layoutParams.screenBrightness = backLight;
+		getWindow().setAttributes(layoutParams);
 	
 	
 	}
