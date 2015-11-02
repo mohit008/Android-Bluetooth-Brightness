@@ -43,7 +43,7 @@ public class BluetoothService extends Activity {
 	private SeekBar brightness;
 
 	//massage
-	TextView brightness_status;
+	private TextView brightness_status;
 
 	private String mConnectedDeviceName = null,
 			mac="",
@@ -58,6 +58,8 @@ public class BluetoothService extends Activity {
 
 	private boolean checkStatus = false;
 	private ArrayList<byte[]> messageByte = new ArrayList<byte[]>();
+	
+	private float brightness_value = 0.0f;
 
 
 	
@@ -126,6 +128,9 @@ public class BluetoothService extends Activity {
 
 		brightness_status.setText(mConnectedDeviceName + ": "+ readMessage);
 
+		brightness_value = Float.valueOf(reciveMessage);
+		setBrightness(brightness_value);
+		
 		receiveMessage = "";
 	}
 
@@ -194,7 +199,7 @@ public class BluetoothService extends Activity {
 
 		brightness = (SeekBar)findViewById(R.id.level);
 
-		brightness.setMax(5);
+		brightness.setMax(10);
 
 		brightness.setProgress(0);
 
@@ -229,14 +234,23 @@ public class BluetoothService extends Activity {
 	
 	public void setBrightness(float progress){
 
-
 		float backLight = (float) progress/100;
 
 		WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
 		layoutParams.screenBrightness = backLight;
 		getWindow().setAttributes(layoutParams);
+	}
 	
-	
+	public void getOperation(String OpMod){
+		
+		switch ("") {
+		case "":
+			
+			break;
+
+		default:
+			break;
+		}
 	}
 
 }
